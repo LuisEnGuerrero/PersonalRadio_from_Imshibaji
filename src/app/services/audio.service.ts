@@ -42,7 +42,7 @@ export class AudioService {
     switch (event.type) {
       case "canplay":
         this.state.duration = this.audioObj.duration;
-        this.state.readableDuration = this.formatTime(this.state.duration);
+        this.state.readableDuration = this.formatTime(this.state.duration) == 'Invalid date' ? 'OnLIne' : this.formatTime(this.state.duration);
         this.state.canplay = true;
         break;
       case "playing":
